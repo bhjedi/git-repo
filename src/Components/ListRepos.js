@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState } from "react";
 import "./ListRepos.css";
 import RowRepos from "./RowRepos";
 import axios from "axios";
@@ -18,20 +18,18 @@ function ListRepo() {
       .substring(0, 10)
       .trim();   
   };
-  const dateBefore = getDateBefore(30);
-  async function getListRepo  (page) {
-    if(page===10){
+  const dateMonthBefore = getDateBefore(30);
+  async function getListRepo (page) {
+    if(page===15){
       setHasMore(false);
       return;
   }
     const result = await axios.get(
-      `https://api.github.com/search/repositories?q=created:>${dateBefore}&sort=stars&order=desc&page=${page}`
+      `https://api.github.com/search/repositories?q=created:>${dateMonthBefore}&sort=stars&order=desc&page=${page}`
     );
     setListRepo((prevState)=>[...prevState,...result.data.items] );
   };
   
- 
- 
   console.log(listRepo);
   return (
     <div className="container" >
@@ -40,10 +38,10 @@ function ListRepo() {
           pageStart={0}
           loadMore={getListRepo}
           hasMore={hasMore}
-          loader={
-       <div className="loader" key={0}><Load/></div>          }
+          loader={ <div className="loader" key={0}><Load/></div> }
+
         > 
-{listRepo.map((repo) => (
+        {listRepo.map((repo) => (
          <a href={repo.html_url} >
          <RowRepos
           key={repo.id}
@@ -56,15 +54,10 @@ function ListRepo() {
           loginName={repo.owner.login}
         />
          </a>
-       
-       
+      
       ))}
      </InfiniteScroll> 
      
-
-      
-    
-      
     </div>
   );
 }

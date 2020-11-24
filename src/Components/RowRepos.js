@@ -10,8 +10,8 @@ function RowRepos({ name, description, star, issues, avatar,submittedDays,loginN
         <p>{description} </p>
         <div className="row__rowContentBottom">
         <p className="row__bottom">	★ : {star}</p>
-        <p className="row__bottom">! : {issues}</p>
-         <p>Submitted {submittedDays} days ago by <strong>{loginName}</strong> </p>
+        <p className="row__bottom"> <b>Issues </b> : {issues}</p>
+         <p>Submitted {submittedDays} days ago by <strong style={{color:'blue'}}>{loginName}</strong> </p>
         </div>
        
       </div>

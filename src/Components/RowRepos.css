@@ -3,7 +3,8 @@
   border-radius: 10px;
   padding: 20px;
   width: 60vw;
-  background-color: whitesmoke;
+  background-color: gainsboro;
+
   -webkit-box-shadow: 0 2px 2px #797474;
   box-shadow: 0 2px 2px #797474;
   display: -webkit-box;
@@ -29,11 +30,10 @@
   display: flex;
   margin-top: 10px;
 }
-/*# sourceMappingURL=RowRepos.css.map */
 .row__bottom {
   border: 0px solid black;
   margin-right: 10px;
-  background-color: blanchedalmond;
+  /* background-color: blanchedalmond;*/
 }
 .row__rowContentName {
   margin-bottom: 9px;
