@@ -1,5 +1,5 @@
 import './App.css';
-import ListRepos from './Component/ListRepos '
+import ListRepos from './Components/ListRepos'
 function App() {
   return (
     <div className="App">
