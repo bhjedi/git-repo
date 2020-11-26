@@ -8,7 +8,7 @@ import {ReactComponent as Load} from './../load.svg'
 
 function ListRepo() {
   const [listRepo, setListRepo] = useState([]);
-  const [hasMore,setHasMore]=useState(true)
+  const [hasMore,setHasMore]=useState(true);
  const getDateBefore = days => {
     var today = new Date();
     today.setDate(today.getDate() - days);
@@ -16,12 +16,13 @@ function ListRepo() {
     return today
       .toISOString()
       .substring(0, 10)
-      .trim();   
+      .trim();   // convert to YY-MM-DD
   };
-  const dateMonthBefore = getDateBefore(30);
+  const dateMonthBefore = getDateBefore(30); // get days before 30days
   async function getListRepo (page) {
     if(page===15){
       setHasMore(false);
+      alert('This is the end')
       return;
   }
     const result = await axios.get(
@@ -50,7 +51,7 @@ function ListRepo() {
           star={repo.stargazers_count}
           issues={repo.open_issues_count}
           avatar={repo.owner.avatar_url}
-          submittedDays={Math.floor((Date.parse(new Date())- Date.parse(repo.created_at))/ (24*60*60*1000))}
+          submittedDays={Math.floor((Date.parse(new Date())- Date.parse(repo.created_at))/ (24*60*60*1000))} //convert into number of days
           loginName={repo.owner.login}
         />
          </a>
