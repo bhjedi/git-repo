@@ -1,4 +1,4 @@
-# app summarize
+# App summarize
 
 In this project we list the most starred Github repos that were created in the last 30 days using the api github.
 the result is a list 
@@ -8,15 +8,15 @@ we can scroll and new results appear ,we stoppet at page 15
 
 Clone down this repository. You will need node and npm installed globally on your machine.
 
-$Installation:
+Installation:
 
 npm install
 
-$To Start Server:
+To Start Server:
 
 npm start
 
-$To Visit App:
+To Visit App:
 
 localhost:3000
 
