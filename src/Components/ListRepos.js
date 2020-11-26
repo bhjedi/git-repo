@@ -10,7 +10,7 @@ function ListRepo({listRepos,loadMore,hasMore}) {
   return (
     <div className="container" >
      
-    <InfiniteScroll
+    <InfiniteScroll //infinite scroll component react
           pageStart={0}
           loadMore={loadMore} 
           hasMore={hasMore}

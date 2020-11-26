@@ -18,7 +18,7 @@ function ListReposContainer() {
       .trim();   // convert to YY-MM-DD
   };
   const dateMonthBefore = getDateBefore(30); // get days before 30days
-  async function getListRepo (page) {
+  async function getListRepo (page) {  //get data from api
     if(page===15){
       setHasMore(false);
       alert('This is the end')
@@ -27,7 +27,7 @@ function ListReposContainer() {
     const result = await axios.get(
       `https://api.github.com/search/repositories?q=created:>${dateMonthBefore}&sort=stars&order=desc&page=${page}`
     );
-    setListRepo((prevState)=>[...prevState,...result.data.items] );
+    setListRepo((prevState)=>[...prevState,...result.data.items] ); //pusg data into listRepo state
   };
   
   console.log(listRepo);
