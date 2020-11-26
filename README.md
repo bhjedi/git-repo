@@ -23,4 +23,4 @@ localhost:3000
 ## technology 
 ¤ReactJS
 ¤CSS
-¤InfinitScroll
+¤HTML
