@@ -53,5 +53,11 @@
   top: 10%;
   text-decoration: none;
   font-size: 20px;
-  color: rgb(5, 53, 17);
+  color: #797474;
+}
+.row__rowContentName:hover {
+  color: #141111;
+}
+.row_rowContentDescription {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
