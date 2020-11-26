@@ -1,9 +1,9 @@
 import './App.css';
-import ListRepos from './Components/ListRepos'
+import ListReposContainer from './Components/ListRepos'
 function App() {
   return (
     <div className="App">
-     <ListRepos />
+     <ListReposContainer />
     </div>
   );
 }

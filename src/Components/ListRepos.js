@@ -1,48 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ListRepos.css";
 import RowRepos from "./RowRepos";
-import axios from "axios";
 import InfiniteScroll from 'react-infinite-scroller';
 import {ReactComponent as Load} from './../load.svg'
 
 
-function ListRepo() {
-  const [listRepo, setListRepo] = useState([]);
-  const [hasMore,setHasMore]=useState(true);
- const getDateBefore = days => {
-    var today = new Date();
-    today.setDate(today.getDate() - days);
-    console.log(today);
-    return today
-      .toISOString()
-      .substring(0, 10)
-      .trim();   // convert to YY-MM-DD
-  };
-  const dateMonthBefore = getDateBefore(30); // get days before 30days
-  async function getListRepo (page) {
-    if(page===15){
-      setHasMore(false);
-      alert('This is the end')
-      return;
-  }
-    const result = await axios.get(
-      `https://api.github.com/search/repositories?q=created:>${dateMonthBefore}&sort=stars&order=desc&page=${page}`
-    );
-    setListRepo((prevState)=>[...prevState,...result.data.items] );
-  };
+function ListRepo({listRepos,loadMore,hasMore}) {
   
-  console.log(listRepo);
   return (
     <div className="container" >
      
-      <InfiniteScroll
+    <InfiniteScroll
           pageStart={0}
-          loadMore={getListRepo}
+          loadMore={loadMore} 
           hasMore={hasMore}
           loader={ <div className="loader" key={0}><Load/></div> }
 
-        > 
-        {listRepo.map((repo) => (
+   > 
+        {listRepos.map((repo) => (
          <a href={repo.html_url} >
          <RowRepos
           key={repo.id}
@@ -57,7 +32,7 @@ function ListRepo() {
          </a>
       
       ))}
-     </InfiniteScroll> 
+    </InfiniteScroll> 
      
     </div>
   );
