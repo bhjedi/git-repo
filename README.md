@@ -22,5 +22,7 @@ localhost:3000
 
 ## technology 
 ¤ReactJS library with InfinitScroll component .
+
 ¤CSS for styling the app.
+
 ¤Git for version control.
