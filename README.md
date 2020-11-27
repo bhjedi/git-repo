@@ -21,6 +21,6 @@ To Visit App:
 localhost:3000
 
 ## technology 
-¤ReactJS
-¤CSS
-¤HTML
+¤ReactJS library with InfinitScroll component .
+¤CSS for styling the app.
+¤Git for version control.
